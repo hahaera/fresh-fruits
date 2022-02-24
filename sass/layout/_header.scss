@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.header {
+  color: $white;
+  background-color: $primary;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+  }
+
+  .logo {
+    a {
+      display: block;
+      padding: 5px 0;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+  }
+
+  &-menu {
+    font-size: 24px;
+    color: $white;
+  }
+
+  @include responsive(D) {
+    &-wrapper {
+      height: 77.5px;
+    }
+
+    .gnb-list {
+      display: flex;
+      align-items: center;
+
+      a {
+        display: block;
+        padding: 5px 25px;
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
