@@ -17,4 +17,9 @@
       @content;
     }
   }
+  @if ($screen == 'W') {
+    @media screen and (min-width: $xl-breakpoint) {
+      @content;
+    }
+  }
 }
