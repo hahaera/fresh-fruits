@@ -1,0 +1,63 @@
+/* grid system
+
+xs < 576px
+
+sm < 768px
+$sm-max-width: 510px + $gutter;
+
+md < 992px
+$md-max-width: 690px + $gutter;
+
+lg >= 992px
+$lg-max-width: 930px + $gutter;
+
+$column: 12;
+$gutter: 30px;
+*/
+
+@use '../abstracts' as *;
+
+$column: 12;
+$gutter: 30px;
+
+$sm-max-width: 540px + $gutter;
+$md-max-width: 720px + $gutter;
+$lg-max-width: 960px + $gutter;
+$xl-max-width: 1140px + $gutter;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  [class^='col-'] {
+    padding: 0 ($gutter / 2);
+  }
+
+  @for $i from 1 through $column {
+    .col-xs-#{$i},
+    .col-sm-#{$i},
+    .col-md-#{$i},
+    .col-lg-#{$i},
+    .col-xl-#{$i} {
+      width: percentage($i / $column);
+    }
+  }
+
+  @include responsive(M) {
+    max-width: $sm-max-width;
+  }
+  @include responsive(T) {
+    max-width: $md-max-width;
+  }
+  @include responsive(D) {
+    max-width: $lg-max-width;
+  }
+  @include responsive(W) {
+    max-width: $xl-max-width;
+  }
+}
