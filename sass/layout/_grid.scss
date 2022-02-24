@@ -15,49 +15,49 @@ $column: 12;
 $gutter: 30px;
 */
 
-@use '../abstracts' as *;
+// @use '../abstracts' as *;
 
-$column: 12;
-$gutter: 30px;
+// $column: 12;
+// $gutter: 30px;
 
-$sm-max-width: 540px + $gutter;
-$md-max-width: 720px + $gutter;
-$lg-max-width: 960px + $gutter;
-$xl-max-width: 1140px + $gutter;
+// $sm-max-width: 540px + $gutter;
+// $md-max-width: 720px + $gutter;
+// $lg-max-width: 960px + $gutter;
+// $xl-max-width: 1140px + $gutter;
 
-.container {
-  width: 100%;
-  margin: 0 auto;
+// .container {
+//   width: 100%;
+//   margin: 0 auto;
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
+//   .row {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
 
-  [class^='col-'] {
-    padding: 0 ($gutter / 2);
-  }
+//   [class^='col-'] {
+//     padding: 0 ($gutter / 2);
+//   }
 
-  @for $i from 1 through $column {
-    .col-xs-#{$i},
-    .col-sm-#{$i},
-    .col-md-#{$i},
-    .col-lg-#{$i},
-    .col-xl-#{$i} {
-      width: percentage($i / $column);
-    }
-  }
+//   @for $i from 1 through $column {
+//     .col-xs-#{$i},
+//     .col-sm-#{$i},
+//     .col-md-#{$i},
+//     .col-lg-#{$i},
+//     .col-xl-#{$i} {
+//       width: percentage($i / $column);
+//     }
+//   }
 
-  @include responsive(M) {
-    max-width: $sm-max-width;
-  }
-  @include responsive(T) {
-    max-width: $md-max-width;
-  }
-  @include responsive(D) {
-    max-width: $lg-max-width;
-  }
-  @include responsive(W) {
-    max-width: $xl-max-width;
-  }
-}
+//   @include responsive(M) {
+//     max-width: $sm-max-width;
+//   }
+//   @include responsive(T) {
+//     max-width: $md-max-width;
+//   }
+//   @include responsive(D) {
+//     max-width: $lg-max-width;
+//   }
+//   @include responsive(W) {
+//     max-width: $xl-max-width;
+//   }
+// }
