@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+
+.home {
+  padding: 45px 0 120px;
+  color: $white;
+  background-color: $primary;
+
+  &-title {
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .img-box {
+    margin: 45px 0;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .img-control {
+    display: flex;
+
+    :first-child {
+      margin-right: 5px;
+    }
+  }
+
+  @include responsive(T) {
+    .row {
+      align-items: center;
+    }
+    .img-box {
+      margin: 0;
+      img {
+        width: 330px;
+      }
+    }
+
+    .img-control {
+      margin-top: 45px;
+    }
+  }
+
+  @include responsive(D) {
+    .img-box {
+      img {
+        width: 530px;
+      }
+    }
+  }
+  @include responsive(W) {
+    .row {
+      align-items: flex-end;
+    }
+    .img-box {
+      img {
+        width: 652px;
+      }
+    }
+    .img-control {
+      margin: 90px 0 45px;
+    }
+  }
+}
